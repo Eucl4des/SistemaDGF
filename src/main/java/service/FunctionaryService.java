@@ -16,6 +16,9 @@ public class FunctionaryService {
     }
 
     public Functionary saveFunctionary(Functionary f) {
+        validarNome(f.getName());
+        validarSalario(f.getBaseSal());
+
         if (f.getBi() != null && repository.findByBi(f.getBi()).isPresent()) {
             throw new IllegalArgumentException("Erro: Já existe um funcionário registado com este BI.");
         }
@@ -50,10 +53,37 @@ public class FunctionaryService {
         }
         repository.deleteById(id);
     }
+    private void validarNome(String nome) {
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nome não pode estar vazio");
+        }
+
+        // Apenas letras, acentos, espaços e hífens
+        if (!nome.matches("^[A-Za-zÀ-ÿ\\s\\-]+$")) {
+            throw new IllegalArgumentException("Nome deve conter apenas letras (números não são permitidos)");
+        }
+    }
+    private void validarSalario(Double salario) {
+        if (salario == null || salario < 0) {
+            throw new IllegalArgumentException("Salário não pode ser negativo!");
+        }
+    }
+
+    private void validarId(Long id) {
+        if (id == null || id < 1) {
+            throw new IllegalArgumentException("ID inválido!");
+        }
+    }
 
     // Felizardo
     public Functionary updateFunctionary(Long id, Functionary newData) {
+        if (newData.getBaseSal() < 0) {
+            throw new IllegalArgumentException("❌ Salário não pode ser negativo!");
+        }
+
         return repository.findById(id)
+
+
                 .map(functionaryExistence -> {
                     functionaryExistence.setName(newData.getName());
                     functionaryExistence.setJobTitle(newData.getJobTitle());
@@ -64,11 +94,6 @@ public class FunctionaryService {
                     return repository.save(functionaryExistence);
                 })
                 .orElseThrow(() -> new RuntimeException("Funcionário com o ID " + id + " não foi encontrado."));
-    }
 
-   // public double calculateTotalPayroll() {
-   //     return repository.findAll().stream()
-   //             .mapToDouble(Functionary::totalSalaryCalculate)
-   //             .sum();
- //   }
-}
+        }
+    }
