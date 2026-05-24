@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("tema-claro") === "true") {
+      document.body.classList.add("light-mode");
+    }
+  </script>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-brand">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path fill="currentColor" d="M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6 1a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-6 2c-3.314 0-6 1.79-6 4v1h8v-1c0-1.506.662-2.866 1.713-3.85A8.409 8.409 0 0 0 9 14Zm6 0c-1.717 0-3.207.592-4.148 1.48A4.97 4.97 0 0 1 13 19v1h8v-1c0-2.21-2.686-4-6-4Z"/>
+            </svg>
+          </div>
+          <div class="finance-copy">
+            <h3>SISTEMA</h3>
+            <p>DE GESTÃO</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item active">
+            <span class="menu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M4 13h6v7H4zm10-9h6v16h-6zM4 4h6v7H4zm10 5h6v3h-6z"/>
+              </svg>
+            </span>
+            Dashboard
+          </a>
+          <a href="departamentos.html" class="menu-item">
+            <span class="menu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M3 21h18v-2H3zm2-4h4V7H5zm5 0h4V3h-4zm5 0h4V10h-4z"/>
+              </svg>
+            </span>
+            Departamentos
+          </a>
+          <a href="status-funcionarios.html" class="menu-item">
+            <span class="menu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5m0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4m6.5-8a2.5 2.5 0 1 1-2.5 2.5A2.5 2.5 0 0 1 18.5 6M19 14c1.95.19 4 1.01 4 2.5V18h-3v-1.5c0-.83-.38-1.8-1-2.5"/>
+              </svg>
+            </span>
+            Status
+          </a>
+          <a href="relatorios.html" class="menu-item">
+            <span class="menu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="m4 19 5-6 4 3 7-9v12H4z"/>
+              </svg>
+            </span>
+            Relatórios
+          </a>
+          <a href="eventos.html" class="menu-item">
+            <span class="menu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7 2h2v2h6V2h2v2h3v18H4V4zm11 7H6v11h12zM8 11h3v3H8z"/>
+              </svg>
+            </span>
+            Eventos
+          </a>
+          <div class="menu-divider"></div>
+          <a href="login.html" class="menu-item">
+            <span class="menu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M10 17l5-5-5-5v3H3v4h7zm9 4H12v-2h7V5h-7V3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/>
+              </svg>
+            </span>
+            Sair do Sistema
+          </a>
+        </nav>
+
+        <div class="sidebar-user-card">
+          <div class="sidebar-user-copy">
+            <strong>Eunice</strong>
+            <span>RH Manager</span>
+          </div>
+          <div class="sidebar-user-avatar">AD</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="content-header">
+        <div class="header-title">
+          <h1>Dashboard</h1>
+          <p>Olá, Administrador. Bem-vindo!</p>
+        </div>
+        <div class="header-tools">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+            <span class="theme-icon sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+              </svg>
+            </span>
+            <span class="theme-icon moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle-thumb"></span>
+          </button>
+
+          <div class="user-profile">
+            <div class="user-info">
+              <h4>Eunice</h4>
+              <p>RH Manager</p>
+            </div>
+            <div class="user-avatar">AD</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="overview-grid">
+        <article class="finance-card payroll-card">
+          <div>
+            <span class="section-eyebrow">Financeiro</span>
+            <p class="finance-label">Despesa Mensal Estimada</p>
+            <h3 class="finance-value" id="despesa-total">Kz 0,00</h3>
+            <span class="finance-note">Custo base da empresa ao final do mês</span>
+          </div>
+          <div class="finance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3 17h3v4H3zm5-7h3v11H8zm5 3h3v8h-3zm5-9h3v17h-3z"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="status-summary-card">
+          <div class="status-summary-header">
+            <div>
+              <span class="section-eyebrow">Status dos Funcionários</span>
+              <h2>Distribuição da equipa</h2>
+            </div>
+            <p>Total: <strong id="qtd-total-funcionarios">0</strong></p>
+          </div>
+
+          <div class="status-circles">
+            <div class="status-circle-card">
+              <div class="status-donut active" id="grafico-ativos" style="--percent:0%;">
+                <div class="status-donut-inner">
+                  <strong id="qtd-ativos">0</strong>
+                  <span id="pct-ativos">0%</span>
+                </div>
+              </div>
+              <div class="status-circle-copy">
+                <h3>Ativos</h3>
+                <p>Em atividade normal</p>
+              </div>
+            </div>
+
+            <div class="status-circle-card">
+              <div class="status-donut inactive" id="grafico-desativos" style="--percent:0%;">
+                <div class="status-donut-inner">
+                  <strong id="qtd-desativos">0</strong>
+                  <span id="pct-desativos">0%</span>
+                </div>
+              </div>
+              <div class="status-circle-copy">
+                <h3>Desativos</h3>
+                <p>Desligados ou inativos</p>
+              </div>
+            </div>
+
+            <div class="status-circle-card">
+              <div class="status-donut leave" id="grafico-licenca" style="--percent:0%;">
+                <div class="status-donut-inner">
+                  <strong id="qtd-licenca">0</strong>
+                  <span id="pct-licenca">0%</span>
+                </div>
+              </div>
+              <div class="status-circle-copy">
+                <h3>Licença</h3>
+                <p>Férias e afastamentos</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="employee-layout">
+        <article class="crud-section employee-main">
+          <div class="crud-header">
+            <div class="crud-copy">
+              <span class="section-eyebrow">Gestão de funcionários</span>
+              <h2>Cadastro e acompanhamento da equipa</h2>
+            </div>
+            <button class="btn-add" type="button" onclick="adicionarFuncionario()">
+              <span>+</span> Novo Funcionário
+            </button>
+          </div>
+
+          <div class="search-bar search-bar-wide">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M10 4a6 6 0 1 0 3.87 10.59l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4m0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8"/>
+              </svg>
+            </span>
+            <input type="text" id="input-busca" placeholder="Buscar funcionário por nome, departamento ou salário...">
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Funcionário</th>
+                  <th>Cargo / Função</th>
+                  <th>Departamento</th>
+                  <th>Salário</th>
+                  <th>Status</th>
+                  <th class="text-center">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-funcionarios"></tbody>
+            </table>
+            <div id="tabela-vazia" class="empty-state" style="display:none;">
+              <div class="empty-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm8 2c-2.327 0-7 1.17-7 3.5V19h14v-2.5C23 14.17 18.327 13 16 13Zm-8 0c-.29 0-.62.02-.97.058A5.575 5.575 0 0 1 9 16.5V19H1v-2.5C1 14.17 5.673 13 8 13Z"/>
+                </svg>
+              </div>
+              <h3>Nenhum funcionário cadastrado</h3>
+              <p>Crie um departamento e depois clique em <strong>+ Novo Funcionário</strong> para começar.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal-overlay" class="modal-overlay" onclick="fecharModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modal-titulo">Novo Funcionário</h3>
+        <button class="modal-close" type="button" onclick="fecharModal()" aria-label="Fechar">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="m18.3 5.71-1.41-1.42L12 9.17 7.11 4.29 5.7 5.71 10.59 10.6 5.7 15.49l1.41 1.41L12 12l4.89 4.9 1.41-1.41-4.88-4.89z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="modal-id">
+
+        <div class="form-group">
+          <label for="modal-nome">Nome completo</label>
+          <input type="text" id="modal-nome" placeholder="Ex: Maria Ferreira">
+        </div>
+
+        <div class="form-group">
+          <label for="modal-email">E-mail corporativo</label>
+          <input type="email" id="modal-email" placeholder="Ex: maria.f@empresa.com">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-cargo">Cargo / Função</label>
+            <input type="text" id="modal-cargo" placeholder="Ex: Engenheira de Software">
+          </div>
+          <div class="form-group">
+            <label for="modal-departamento">Departamento</label>
+            <select id="modal-departamento"></select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-salario">Salário base (Kz)</label>
+            <input type="number" id="modal-salario" min="0" step="0.01" placeholder="Ex: 350000">
+          </div>
+          <div class="form-group">
+            <label for="modal-ajuste">Observação salarial</label>
+            <input type="text" id="modal-ajuste" placeholder="Promoção, ajuste ou redução">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Status</label>
+          <div class="status-select">
+            <label class="status-option">
+              <input type="radio" name="modal-status" value="Ativo" checked>
+              <span class="status-opt-label badge-active">Ativo</span>
+            </label>
+            <label class="status-option">
+              <input type="radio" name="modal-status" value="Desativo">
+              <span class="status-opt-label badge-inactive">Desativo</span>
+            </label>
+            <label class="status-option">
+              <input type="radio" name="modal-status" value="Licença">
+              <span class="status-opt-label badge-leave">Licença</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" type="button" onclick="fecharModal()">Cancelar</button>
+        <button class="btn-save" type="button" onclick="salvarModal()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

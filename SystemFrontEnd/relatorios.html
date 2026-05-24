@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão - Relatórios</title>
+  <link rel="stylesheet" href="relatorios.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("tema-claro") === "true") {
+      document.body.classList.add("light-mode");
+    }
+  </script>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6 1a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-6 2c-3.314 0-6 1.79-6 4v1h8v-1c0-1.506.662-2.866 1.713-3.85A8.409 8.409 0 0 0 9 14Zm6 0c-1.717 0-3.207.592-4.148 1.48A4.97 4.97 0 0 1 13 19v1h8v-1c0-2.21-2.686-4-6-4Z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>SISTEMA</h3>
+          <p>DE GESTÃO</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="dashboard.html" class="menu-item">
+          <span class="menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 13h6v7H4zm10-9h6v16h-6zM4 4h6v7H4zm10 5h6v3h-6z"/></svg></span>
+          Dashboard
+        </a>
+        <a href="departamentos.html" class="menu-item">
+          <span class="menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 21h18v-2H3zm2-4h4V7H5zm5 0h4V3h-4zm5 0h4V10h-4z"/></svg></span>
+          Departamentos
+        </a>
+        <a href="status-funcionarios.html" class="menu-item">
+          <span class="menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5m0 2c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4m6.5-8a2.5 2.5 0 1 1-2.5 2.5A2.5 2.5 0 0 1 18.5 6M19 14c1.95.19 4 1.01 4 2.5V18h-3v-1.5c0-.83-.38-1.8-1-2.5"/></svg></span>
+          Status
+        </a>
+        <a href="relatorios.html" class="menu-item active">
+          <span class="menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m4 19 5-6 4 3 7-9v12H4z"/></svg></span>
+          Relatórios
+        </a>
+        <a href="eventos.html" class="menu-item">
+          <span class="menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h3v18H4V4zm11 7H6v11h12zM8 11h3v3H8z"/></svg></span>
+          Eventos
+        </a>
+        <div class="menu-divider"></div>
+        <a href="login.html" class="menu-item">
+          <span class="menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 17l5-5-5-5v3H3v4h7zm9 4H12v-2h7V5h-7V3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2"/></svg></span>
+          Sair do Sistema
+        </a>
+      </nav>
+
+      <div class="sidebar-user-card">
+        <div class="sidebar-user-copy">
+          <strong>Eunice</strong>
+          <span>RH Manager</span>
+        </div>
+        <div class="sidebar-user-avatar">AD</div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="content-header">
+        <div class="header-title">
+          <h1>Relatórios</h1>
+          <p>Crie, salve, edite e exclua relatórios.</p>
+        </div>
+
+        <div class="header-tools">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+            <span class="theme-icon sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg></span>
+            <span class="theme-icon moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+            <span class="theme-toggle-thumb"></span>
+          </button>
+
+          <div class="user-profile">
+            <div class="user-info">
+              <h4>Eunice</h4>
+              <p>RH Manager</p>
+            </div>
+            <div class="user-avatar">AD</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="relatorio-form">
+        <div class="form-field">
+          <label for="relatorioTitulo">Título do relatório</label>
+          <input type="text" id="relatorioTitulo" placeholder="Resumo rápido do assunto">
+        </div>
+
+        <div class="form-field">
+          <label for="relatorioConteudo">Conteúdo do relatório</label>
+          <textarea id="relatorioConteudo" placeholder="Escreva aqui seu relatório..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-save" id="salvarRelatorio" type="button">Salvar Relatório</button>
+          <button class="btn-clear" id="limparRelatorio" type="button">Limpar</button>
+        </div>
+      </section>
+
+      <section class="crud-section report-table">
+        <div class="crud-header">
+          <div class="search-bar">
+            <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 4a6 6 0 1 0 3.87 10.59l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4m0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8"/></svg></span>
+            <input type="text" id="buscaRelatorio" placeholder="Buscar relatório">
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="table-relatorios">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Data / Hora</th>
+                <th>Visualizar</th>
+                <th class="text-center">Acoes</th>
+              </tr>
+            </thead>
+            <tbody id="relatoriosTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="relatorios.js"></script>
+</body>
+</html>

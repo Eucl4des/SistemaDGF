@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão de Funcionários - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+    <script>
+        if (localStorage.getItem("tema-claro") === "true") {
+            document.body.classList.add("light-mode");
+        }
+    </script>
+
+    <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Alternar entre tema claro e escuro"
+        aria-pressed="false"
+    >
+        <span class="theme-icon sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+            </svg>
+        </span>
+        <span class="theme-icon moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </span>
+        <span class="theme-toggle-thumb"></span>
+    </button>
+
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <div class="container" id="container">
+        <div class="form-container login-container">
+            <form id="form-funcionario">
+                <h1>Área do Colaborador</h1>
+
+                <input
+                    type="number"
+                    id="funcionario-id"
+                    class="input-field"
+                    placeholder="ID do Funcionário"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="funcionario-email"
+                    class="input-field"
+                    placeholder="E-mail Corporativo"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="funcionario-senha"
+                    class="input-field"
+                    placeholder="Senha"
+                    required
+                >
+
+                <button type="submit">Iniciar Sessão</button>
+            </form>
+        </div>
+
+        <div class="form-container register-container">
+            <form id="form-admin">
+                <h1>Painel Administrativo</h1>
+
+                <input
+                    type="email"
+                    id="admin-email"
+                    class="input-field"
+                    placeholder="E-mail do Administrador"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="admin-senha"
+                    class="input-field"
+                    placeholder="Senha"
+                    required
+                >
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Área do Funcionário</h1>
+                    <p>Entre com o ID, email corporativo e a senha.</p>
+                    <button class="ghost-btn" id="login" type="button">Login Funcionário</button>
+                </div>
+
+                <div class="overlay-panel overlay-right">
+                    <h1>Área Administrativa</h1>
+                    <p>Acesso exclusivo para administradores.</p>
+                    <button class="ghost-btn" id="register" type="button">Login Admin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

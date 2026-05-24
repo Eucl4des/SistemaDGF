@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Funcionários</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("tema-claro") === "true") {
+      document.body.classList.add("light-mode");
+    }
+  </script>
+  <nav>
+    <a class="nav-logo" href="#">
+      <span aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" role="img">
+          <path fill="currentColor" d="M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm6 1a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-6 2c-3.314 0-6 1.79-6 4v1h8v-1c0-1.506.662-2.866 1.713-3.85A8.409 8.409 0 0 0 9 14Zm6 0c-1.717 0-3.207.592-4.148 1.48A4.97 4.97 0 0 1 13 19v1h8v-1c0-2.21-2.686-4-6-4Z"/>
+        </svg>
+      </span>
+      <span>Gestão de Funcionários</span>
+    </a>
+
+    <div class="nav-links">
+      <a class="active" href="#topo">Início</a>
+      <a href="#saiba-mais">Saiba mais</a>
+    </div>
+
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Alternar entre tema claro e escuro"
+      aria-pressed="false"
+    >
+      <div class="toggle-circle">
+        <svg
+          class="icon sun"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+
+        <svg
+          class="icon moon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </div>
+    </button>
+  </nav>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="badge">Sistema de gestão de funcionários</span>
+
+        <div class="hero-title">
+          <span class="line-dark">Gestão eficiente</span>
+          <span class="line-blue">Resultados reais.</span>
+        </div>
+
+        <p class="hero-sub">
+          Organize sua equipe, otimize processos
+          e tome decisões com base em dados.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn-login" href="login.html">
+            <span aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M10 17l5-5-5-5v3H3v4h7v3zm8-12H8a2 2 0 0 0-2 2v1h2V7h10v10H8v-1H6v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/>
+              </svg>
+            </span>
+            Fazer login
+          </a>
+
+          <a class="btn-saiba" href="#saiba-mais">
+            Saiba mais
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="assests/Gemini_Generated_Image_koxjyxkoxjyxkoxj.png" alt="Equipe analisando dados em um tablet">
+      </div>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path fill="currentColor" d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm8 2c-2.327 0-7 1.17-7 3.5V19h14v-2.5C23 14.17 18.327 13 16 13Zm-8 0c-.29 0-.62.02-.97.058A5.575 5.575 0 0 1 9 16.5V19H1v-2.5C1 14.17 5.673 13 8 13Zm8-8a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM8 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="feat-title">Centralize informações</h2>
+          <p class="feat-desc">Tenha todos os dados da equipe em um so lugar, sempre atualizados.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M4 19h16v2H4zm2-8h3v6H6zm5-4h3v10h-3zm5 2h3v8h-3zM3 6l4.5-4.5L11 5l5-5L21 5.5 19.5 7 16 3.5l-5 5-3.5-3.5L4.5 8z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="feat-title">Acompanhe resultados</h2>
+          <p class="feat-desc">Relatorios e indicadores para decisoes mais estratégicas.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 15H5V9h14Zm0-12H5V6h14ZM7 11h5v5H7Z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="feat-title">Gerencie rotinas</h2>
+          <p class="feat-desc">Férias, ausências, documentos e muito mais de forma simples.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17 9h-1V7a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v9h14v-9a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4Zm7 11H7v-7h10Zm-5-1a2 2 0 0 0 2-2 2 2 0 0 0-1-1.73V12h-2v1.27A2 2 0 0 0 12 17Z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="feat-title">Acesso seguro</h2>
+          <p class="feat-desc">Controle de acessos e protecao total das informacoes.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="about-section" id="saiba-mais">
+      <div class="about-copy">
+        <span class="badge">Saiba mais</span>
+        <h2 class="about-title">
+          <span class="about-title-line">Tudo o que a sua equipa precisa,</span>
+          <br>
+          <span class="about-title-line">num fluxo mais claro e organizado.</span>
+        </h2>
+        <p class="about-text">
+          Esta plataforma foi pensada para concentrar informações, facilitar a gestão diária
+          e apoiar decisões com uma visão simples sobre pessoas, departamentos e rotinas.
+        </p>
+
+        <div class="about-points">
+          <article class="about-point">
+            <span class="about-number">01</span>
+            <div class="about-point-content">
+              <h3>Visão centralizada</h3>
+              <p>
+                Reúne dados da equipa, estado dos colaboradores e estrutura dos departamentos
+                numa experiência mais fácil de acompanhar.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-point">
+            <span class="about-number">02</span>
+            <div class="about-point-content">
+              <h3>Operação mais fluida</h3>
+              <p>
+                Organiza tarefas administrativas, reduz dispersão de informação e melhora o
+                controlo sobre o funcionamento interno.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-point">
+            <span class="about-number">03</span>
+            <div class="about-point-content">
+              <h3>Mais alinhamento</h3>
+              <p>
+                Eventos, relatórios e acompanhamento de status ajudam a equipa a manter-se
+                informada e conectada ao contexto da empresa.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="about-visual" aria-hidden="true">
+        <div class="about-image about-image-lg">
+          <img src="assests/500532946108760289.jpg" alt="">
+        </div>
+
+        <div class="about-image about-image-sm">
+          <img src="assests/643874078013151903.jpg" alt="">
+        </div>
+
+        <div class="about-badge-card">
+          <strong>+38%</strong>
+          <span>mais visibilidade sobre processos e equipa</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
